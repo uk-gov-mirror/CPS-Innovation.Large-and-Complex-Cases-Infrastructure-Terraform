@@ -25,9 +25,9 @@ locals {
       ado_sc = {
         principal_id = data.azuread_service_principal.ado.object_id
         roles = [
-          "Storage Blob Data contributor",
-          "Storage Queue Data contributor",
-          "Storage Table Data contributor"
+          "Storage Blob Data Contributor",
+          "Storage Queue Data Contributor",
+          "Storage Table Data Contributor"
         ]
       }
       fa_main = {
