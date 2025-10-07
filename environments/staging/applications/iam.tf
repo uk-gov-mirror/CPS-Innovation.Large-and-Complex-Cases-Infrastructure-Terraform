@@ -37,8 +37,24 @@ locals {
           "Storage Table Data Contributor"
         ]
       }
+      fa_main_stg = {
+        principal_id = azurerm_windows_function_app_slot.fa_main_stg.identity[0].principal_id
+        roles = [
+          "Storage Blob Data Owner",
+          "Storage Table Data Contributor"
+        ]
+      }
       filetransfer = {
         principal_id = azurerm_windows_function_app.filetransfer.identity[0].principal_id
+        roles = [
+          "Storage Blob Data Owner",
+          "Storage Blob Data Contributor",
+          "Storage Queue Data Contributor",
+          "Storage Table Data Contributor"
+        ]
+      }
+      filetransfer_stg = {
+        principal_id = azurerm_windows_function_app_slot.filetransfer_stg.identity[0].principal_id
         roles = [
           "Storage Blob Data Owner",
           "Storage Blob Data Contributor",
@@ -52,8 +68,16 @@ locals {
         principal_id = azurerm_windows_function_app.fa_main.identity[0].principal_id
         roles        = ["Key Vault Secrets User"]
       }
+      fa_main_stg = {
+        principal_id = azurerm_windows_function_app_slot.fa_main_stg.identity[0].principal_id
+        roles        = ["Key Vault Secrets User"]
+      }
       filetransfer = {
         principal_id = azurerm_windows_function_app.filetransfer.identity[0].principal_id
+        roles        = ["Key Vault Secrets User"]
+      }
+      filetransfer_stg = {
+        principal_id = azurerm_windows_function_app_slot.filetransfer_stg.identity[0].principal_id
         roles        = ["Key Vault Secrets User"]
       }
       ado_sc = {
