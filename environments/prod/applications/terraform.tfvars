@@ -45,3 +45,10 @@ log_retention_days = 90
 
 alert_ui_5xx_rate_threshold = 1
 alert_ui_latency_threshold  = 15
+
+alert_api_excluded_exceptions = {
+  "ProblemId" = [
+    "Amazon.Runtime.Internal.HttpErrorResponseException at Amazon.Runtime.HttpWebRequestMessage.ProcessHttpResponseMessage",
+    "CPS.ComplexCases.API.Exceptions.CpsAuthenticationException at CPS.ComplexCases.API.Context.RequestContext.get_CmsAuthValues"
+  ]
+}

@@ -37,3 +37,11 @@ blob_delete_retention = {
 sa_key_access_enabled = false
 
 sa_containers = ["lcc-reports-staging", "aspose-templates"]
+
+alert_api_excluded_exceptions = {
+  "ProblemId" = [
+    "CPS.ComplexCases.API.Exceptions.CpsAuthenticationException at CPS.ComplexCases.API.Middleware.RequestValidationMiddleware+<Invoke>d__3.MoveNext",
+    "Amazon.Runtime.Internal.HttpErrorResponseException at Amazon.Runtime.HttpWebRequestMessage.ProcessHttpResponseMessage",
+    "CPS.ComplexCases.API.Exceptions.CpsAuthenticationException at CPS.ComplexCases.API.Context.RequestContext.get_CmsAuthValues"
+  ]
+}

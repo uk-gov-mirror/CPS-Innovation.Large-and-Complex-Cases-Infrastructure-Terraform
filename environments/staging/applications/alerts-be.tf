@@ -100,7 +100,7 @@ resource "azurerm_monitor_scheduled_query_rules_alert_v2" "blob_service_delete_o
 
   auto_mitigation_enabled          = true
   workspace_alerts_storage_enabled = false
-  enabled                          = true
+  enabled                          = false
 
   action {
     action_groups = [azurerm_monitor_action_group.api_alerts.id]

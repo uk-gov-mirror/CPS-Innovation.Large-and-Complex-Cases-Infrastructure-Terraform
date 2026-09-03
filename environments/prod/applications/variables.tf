@@ -169,6 +169,12 @@ variable "dev_team_email" {
   sensitive   = true
 }
 
+variable "alert_api_excluded_exceptions" {
+  type        = map(list(string))
+  description = "A map of exception properties to lists of values that should be excluded from the api exceptions alert rule. The key is the property name and the value is a list of values to exclude."
+  default     = {}
+}
+
 variable "alert_ui_5xx_rate_threshold" {
   type        = number
   description = "The number of UI SPA 5xx responses over which an alert should be triggered."

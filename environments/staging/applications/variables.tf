@@ -168,3 +168,9 @@ variable "dev_team_email" {
   description = "The DL email address of the project's dev team."
   sensitive   = true
 }
+
+variable "alert_api_excluded_exceptions" {
+  type        = map(list(string))
+  description = "A map of exception properties to lists of values that should be excluded from the api exceptions alert rule. The key is the property name and the value is a list of values to exclude."
+  default     = {}
+}
